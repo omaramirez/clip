@@ -5,7 +5,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 import java.math.BigDecimal;
 
 @NoArgsConstructor
@@ -14,12 +16,11 @@ import java.math.BigDecimal;
 @Setter
 public class PayloadRequestDTO {
 
-    @NotEmpty
-    private BigDecimal amount;
+    @Pattern(regexp="^[1-9]\\d*(\\.\\d+)?$", message="Amount field should contain digits")
+    private String amount;
 
-    @NotEmpty
     private ClipUserDTO clipUser;
 
-    @NotEmpty
+    @Valid
     private CardDataDTO cardData;
 }

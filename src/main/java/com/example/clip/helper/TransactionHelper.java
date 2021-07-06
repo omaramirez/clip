@@ -121,7 +121,7 @@ public class TransactionHelper {
         CardData cardData = TransactionHelper.convertCardDataDTOtoCardData(payloadRequestDTO);
         payload.setCardData(cardData);
         payload.setFlagDisbursement(0);
-        payload.setAmount(payloadRequestDTO.getAmount());
+        payload.setAmount(new BigDecimal(payloadRequestDTO.getAmount()));
 
         return payload;
     }
