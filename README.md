@@ -1,5 +1,13 @@
 # Clip Project
 
+## Prerequisites
+Spring Boot
+JPA
+H2
+Maven 4
+Java 1.8
+
+## Description
 Create an API that must be have the following operations:
 
 ## Make/Accept a transaction:
